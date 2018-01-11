@@ -21,18 +21,16 @@ export class ServersService {
     return this.servers;
   }
 
-  getServer(id: number) {    
-    console.log("ss id: ", id);
+  getServer(id: number) {
     const server = this.servers.find(
       (s) => {
         return s.id === id;
       }
-    );  
-    console.log("ss server: ", server);
+    );
     return server;
   }
 
-  updateServer(id: number, serverInfo: {name: string, status: string}) {
+  updateServer(id: number, serverInfo: { name: string, status: string }) {
     const server = this.servers.find(
       (s) => {
         return s.id === id;
