@@ -3,14 +3,14 @@ import { Router, ActivatedRoute, Params, CanDeactivate } from "@angular/router";
 import { Observable } from "rxjs/Observable";
 
 import { ServersService } from '../servers.service';
-//import { CanComponentDeactivate } from './can-deactivate-guard.service';
+import { CanComponentDeactivate } from './can-deactivate-guard.service';
 
 @Component({
   selector: 'app-edit-server',
   templateUrl: './edit-server.component.html',
   styleUrls: ['./edit-server.component.css']
 })
-export class EditServerComponent implements OnInit, CanDeactivate<EditServerComponent> {
+export class EditServerComponent implements OnInit, CanDeactivate<CanComponentDeactivate> {
   server: { id: number, name: string, status: string };
   serverName = '';
   serverStatus = '';
